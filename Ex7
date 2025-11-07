@@ -1,0 +1,42 @@
+public interface Programador {
+    void programar();
+}
+
+public interface Motorista {
+    void dirigir();
+}
+
+public interface Funcionario {
+    void trabalhar();
+}
+
+class Manobrista implements Motorista, Funcionario {
+    public void trabalhar() {
+        System.out.println("Estacionando...");
+    }
+
+    public void dirigir() {
+        System.out.println("Dirigindo carro...");
+    }
+}
+
+class Desenvolvedor implements Programador, Funcionario {
+    public void trabalhar() {
+        System.out.println("Trabalhando...");
+    }
+    public void programar() {
+        System.out.println("Desenvolvendo aplicativo...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Desenvolvedor dev = new Desenvolvedor();
+        dev.trabalhar();
+        dev.programar();
+
+        Manobrista manobrista1 = new Manobrista();
+        manobrista1.dirigir();
+        manobrista1.trabalhar();
+    }
+}

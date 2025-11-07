@@ -1,0 +1,33 @@
+public interface LeituraDados {
+  void lerDados();
+}
+
+public class LeitorArquivo implements FonteDados {
+    public String lerDados() {
+        return "Lendo dados do arquivo...";
+    }
+}
+
+public class Processador {
+    
+    private final LeituraDados leitura;
+
+    public Processador(LeituraDados leitura) {
+        this.leitura = leitura;
+    }
+
+    public void processar() {
+        System.out.println("Processando dados: " + leitura.lerDados());
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        
+        LeituraDados leitor = new LeitorArquivo();
+        
+        Processador p = new Processador(leitor);
+        
+        p.processar();
+    }
+}

@@ -1,0 +1,37 @@
+public interface VeiculoMotorizado {
+    void acelerar();
+}
+
+public class Veiculo {
+    public void mover() {
+        System.out.println("Veículo se movendo.");
+    }
+}
+
+public class Carro extends Veiculo implements VeiculoMotorizado {
+    @Override
+    public void acelerar() {
+        System.out.println("Carro acelerando com motor.");
+    }
+}
+
+public class Bicicleta extends Veiculo {
+    public void pedalar() {
+        System.out.println("Bicicleta sendo pedalada.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        
+        Veiculo bicicleta = new Bicicleta();
+        bicicleta.mover(); // OK
+       
+        VeiculoMotorizado carro = new Carro();
+        carro.acelerar(); // OK
+
+        VeiculoMotorizado[] frota = new VeiculoMotorizado[]{ new Carro() };
+        for (VeiculoMotorizado motorizado : frota) {
+            motorizado.acelerar(); // Seguro, pois todos podem acelerar!
+        }
+    }
+}

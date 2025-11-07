@@ -1,0 +1,34 @@
+public interface RepositorioDados {
+    void salvar(String dados);
+}
+
+public class BancoDeDados implements RepositorioDados {
+
+    public void salvar(String dados) {
+        System.out.println("Salvando no banco: " + dados);
+    }
+}
+
+public class RelatorioService {
+    
+    private final RepositorioDados repositorio;
+
+    public RelatorioService(RepositorioDados repositorio) {
+        this.repositorio = repositorio;
+    }
+
+    public void gerarRelatorio() {
+        repositorio.salvar("Relatório de vendas");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        
+        RepositorioDados banco = new BancoDeDados();
+        
+        RelatorioService service = new RelatorioService(banco);
+        
+        service.gerarRelatorio();
+    }
+}

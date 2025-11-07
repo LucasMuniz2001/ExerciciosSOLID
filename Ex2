@@ -1,0 +1,22 @@
+public class GeradorRelatorio {
+
+    public String gerarRelatorioDeVendas() {
+        
+        System.out.println("Conteúdo do relatório gerado com sucesso.");
+        
+    }
+}
+
+public class ExportadorRelatorio {
+
+    public void salvarEmArquivo() {
+        System.out.println("Conteúdo do relatório salvo em arquivo .txt:");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        GeradorRelatorio gerador = new GeradorRelatorio();
+        ExportadorRelatorio exportador = new ExportadorRelatorio();
+ }
+}

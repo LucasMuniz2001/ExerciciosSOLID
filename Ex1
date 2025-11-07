@@ -1,0 +1,39 @@
+public class Usuario {
+    private String nome;
+    private String email;
+
+
+    public Usuario(String nome, String email) {
+        this.nome = nome;
+        this.email = email;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+}
+
+public class CadastroUsuario {
+
+    public void cadastrar(Usuario usuario) {
+        System.out.println("Usuário cadastrado: " + usuario.getNome() + " e" + usuario.getEmail() );
+    }
+}
+
+public class Validador {
+    public boolean validarSenha(String senha) {
+        return senha.length() >= 8;
+    }
+}
+
+public class EnviaEmail {
+    public void enviarEmailBoasVindas(String email) {
+        System.out.println("Enviando e-mail de boas-vindas para: " + email);
+    }
+}
+

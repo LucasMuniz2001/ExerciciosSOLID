@@ -1,0 +1,24 @@
+public interface Desconto {
+    double aplicarDesconto(double valor);
+}
+
+public class DescontoVIP implements EstrategiaDesconto {
+    @Override
+    public double aplicarDesconto(double valor) {
+        return valor * 0.8;
+    }
+}
+
+public class DescontoRegular implements EstrategiaDesconto {
+    @Override
+    public double aplicarDesconto(double valor) {
+        return valor * 0.9;
+    }
+}
+
+public class SemDesconto implements EstrategiaDesconto {
+    @Override
+    public double aplicarDesconto(double valor) {
+        return valor;
+    }
+}

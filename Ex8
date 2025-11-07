@@ -1,0 +1,34 @@
+public interface Andador {
+  void andar();
+}
+
+public interface Nadador {
+  void nadar();
+}
+
+public interface Voador {
+  void voar();
+}
+
+public class Cachorro implements Andador, Nadador {
+
+    public void andar() {
+        System.out.println("Cachorro andando.");
+    }
+
+    public void nadar() {
+        System.out.println("Cachorro nadando.");
+    }
+}
+
+public class Passaro implements Andador, Voador {
+
+    public void voar() {
+        System.out.println("Passaro voando.")
+    }
+
+    public void andar() {
+        System.out.println("Passaro andando.")
+    }
+}
+
